@@ -6,7 +6,7 @@ app = FastAPI()
 
 
 @app.get("/")
-def pong(settings: Settings = Depends(get_settings)):
+async def pong(settings: Settings = Depends(get_settings)):
     return {
         "ping": "pong",
         "environment": settings.environment,
